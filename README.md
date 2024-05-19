@@ -1,4 +1,4 @@
-# <img src="projects/demo/src/assets/caravan-logo-black.png" alt="caravan logo" width="48px"> Caravan UI
+# Caravan UI
 
 [![npm](https://badgen.net/npm/v/@caravancoop/ui-kit)](https://www.npmjs.com/package/@caravancoop/ui-kit)
 ![license](https://badgen.net/static/license/MIT/green)
