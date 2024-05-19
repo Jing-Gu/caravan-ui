@@ -1,0 +1,27 @@
+<div class="rounded-lg h-full bg-car-light dark:bg-car-dark-100 shadow-lg overflow-hidden">
+  <ng-container *ngIf="imgSrc">
+    <div class="h-[150px] overflow-hidden">
+      <img [src]='imgSrc' alt='cardImg' class="w-full h-full object-center object-cover">
+    </div>
+  </ng-container>
+  <div class='flex flex-col gap-4 p-4'>
+    <ng-container *ngIf="subtitle">
+      <p class="uppercase text-sm text-car-neutral-700 dark:text-car-neutral-300">
+        {{subtitle}}
+      </p>
+    </ng-container>
+    <ng-container *ngIf="title">
+      <p class="text-lg font-medium text-car-neutral-900 dark:text-car-neutral-50
+        line-clamp-2">
+        {{title}}
+      </p>
+    </ng-container>
+    <ng-container *ngIf="content">
+      <p class="text-car-neutral-900 dark:text-car-neutral-100 text-sm line-clamp-2">
+        {{content}}
+      </p>
+    </ng-container>
+    <ng-content></ng-content>
+  </div>
+</div>
+

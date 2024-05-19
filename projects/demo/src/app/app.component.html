@@ -1,0 +1,61 @@
+<div class='flex flex-col h-screen md:overflow-y-hidden'>
+
+  <header class="fixed top-0 left-0 right-0 bg-car-neutral-100 dark:bg-car-dark-100 p-4 h-[8vh]
+    flex items-center">
+    <a routerLink='/' class="border-2 border-car-neutral-300">
+      CARAVAN UI Demo
+    </a>
+    <car-button car-text-btn color="neutral" (click)="toggleTheme()">toggle theme</car-button>
+    <car-button car-text-btn color="neutral" class="block ml-auto md:hidden" (click)="toggleMenu()">
+      <i-feather name="menu"></i-feather>
+    </car-button>
+  </header>
+
+  <car-mobile-sidenav [menuIsOpen]="menuOpen">
+    <div car-menu-overlay (click)="closeMenu()" class="w-full h-full"></div>
+    <ul car-mobile-menu class="h-full bg-car-neutral-50">
+
+      <car-accordion-item title="Components" [openIcon]="openIcon" [closeIcon]="closeIcon" [isOpen]="true">
+        <li routerLinkActive='active' *ngFor="let clink of componentLinks" (click)="closeMenu()"
+          class="mb-4 [&.active>a]:text-car-primary-500">
+          <a [routerLink]='clink.link'>{{clink.name}}</a>
+        </li>
+      </car-accordion-item>
+
+      <car-accordion-item title="Templates" [openIcon]="openIcon" [closeIcon]="closeIcon" [isOpen]="true">
+        <li routerLinkActive='active' *ngFor="let tlink of templateLinks" (click)="closeMenu()"
+          class="mb-4 [&.active>a]:text-car-primary-500">
+          <a [routerLink]='tlink.link'>{{tlink.name}}</a>
+        </li>
+      </car-accordion-item>
+    </ul>
+  </car-mobile-sidenav>
+
+
+  <car-desktop-sidenav class="h-screen pt-[8vh] bg-car-neutral-50 dark:bg-car-dark-300">
+    <ul car-desktop-menu class="w-[220px] overflow-y-auto">
+
+      <car-accordion-item title="Components" [openIcon]="openIcon" [closeIcon]="closeIcon" [isOpen]="true">
+        <li routerLinkActive='active' *ngFor="let clink of componentLinks"
+          class="mb-4 [&.active>a]:text-car-primary-500">
+          <a [routerLink]='clink.link'>{{clink.name}}</a>
+        </li>
+      </car-accordion-item>
+
+      <car-accordion-item title="Templates" [openIcon]="openIcon" [closeIcon]="closeIcon" [isOpen]="true">
+        <li routerLinkActive='active' *ngFor="let tlink of templateLinks"
+          class="mb-4 [&.active>a]:text-car-primary-500">
+          <a [routerLink]='tlink.link'>{{tlink.name}}</a>
+        </li>
+      </car-accordion-item>
+    </ul>
+
+    <div car-sidenav-content class="overflow-y-auto p-4">
+      <router-outlet></router-outlet>
+      <footer class="text-center text-sm p-2">
+        CARAVAN - 2023
+      </footer>
+    </div>
+  </car-desktop-sidenav>
+
+</div>

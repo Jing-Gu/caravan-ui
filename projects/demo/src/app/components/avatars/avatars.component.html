@@ -1,0 +1,50 @@
+<app-header [title]="title" [subtitle]="subtitle"></app-header>
+
+<p>An avatar has a sets of sizes, from the smallest 32px to the biggest 128px, the default medium is 48px.</p>
+<div class='component-case'>
+  <div class="flex flex-wrap">
+    <h4 class="mr-8">Anonymous avatar</h4>
+    <car-avatar size="small" class="mr-8"></car-avatar>
+    <car-avatar class="mr-8"></car-avatar>
+    <car-avatar size="large" class="mr-8"></car-avatar>
+    <car-avatar size="x-large" class="mr-8"></car-avatar>
+    <car-avatar size="xx-large"></car-avatar>
+  </div>
+
+</div>
+<div class='component-case'>
+  <div class="flex flex-wrap">
+    <h4 class="mr-8">Avatar with initial</h4>
+    <car-avatar size="small" name="Jane Doe" class="mr-8"></car-avatar>
+    <car-avatar name="Jane Doe" class="mr-8"></car-avatar>
+    <car-avatar size="large" name="Jane Doe" class="mr-8"></car-avatar>
+    <car-avatar size="x-large" name="Anne Doe" class="mr-8">
+      <car-badge car-avatar-badge status="success">On</car-badge>
+    </car-avatar>
+    <car-avatar size="xx-large" name="Anne Doe">
+      <car-badge car-avatar-badge status="warning">Off</car-badge>
+    </car-avatar>
+  </div>
+</div>
+<div class='component-case'>
+  <div class="flex flex-wrap">
+    <h4 class="mr-8">Avatar with photo</h4>
+    <car-avatar size="small" name="Jane Doe" [imgUrl]="photoUrl" class="mr-8">
+      <car-badge car-avatar-badge status="number" size="small">2</car-badge>
+    </car-avatar>
+    <car-avatar name="Jane Doe" [imgUrl]="photoUrl" class="mr-8">
+      <car-badge car-avatar-badge status="number" size="small">2</car-badge>
+    </car-avatar>
+    <car-avatar size="large" [imgUrl]="photoUrl" class="mr-8">
+      <car-badge car-avatar-badge status="number">2</car-badge>
+    </car-avatar>
+    <car-avatar size="x-large" [imgUrl]="photoUrl" class="mr-8">
+      <car-badge car-avatar-badge status="number">2</car-badge>
+    </car-avatar>
+    <car-avatar size="xx-large" [imgUrl]="photoUrl">
+      <car-badge car-avatar-badge status="number">2</car-badge>
+    </car-avatar>
+  </div>
+</div>
+
+

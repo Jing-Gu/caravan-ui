@@ -1,0 +1,28 @@
+
+<h3>Basic list</h3>
+<ng-container *ngFor="let item of list">
+  <car-item [title]="item.title" class="block border-b border-car-neutral-500"></car-item>
+</ng-container>
+
+<h3>Ordered list</h3>
+<ng-container *ngFor="let item of list">
+  <car-item [id]="item.id" [title]="item.title"></car-item>
+</ng-container>
+
+<h3>List with short content & badge</h3>
+<ng-container *ngFor="let item of jobList">
+  <car-item [title]="item.title" [content]="item.content" [date]="item.date"
+    class="block border-b border-car-neutral-100">
+    <car-badge car-item-badge status="info" size="small">info</car-badge>
+  </car-item>
+</ng-container>
+
+<h3>List with avatar</h3>
+<ng-container *ngFor="let item of jobList">
+  <car-item [title]="item.name" [content]="item.title"
+    class="block border-b border-car-neutral-100">
+    <car-avatar car-item-avatar [name]="item.name" size="small"></car-avatar>
+  </car-item>
+</ng-container>
+
+

@@ -1,0 +1,44 @@
+<h3>Basic card</h3>
+<car-card subtitle="card subtitle"
+  title="5 things you need to know about your debit card"
+  content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eligendi temporibus est debitis eveniet, quasi dolores aliquam earum, maxime asperiores beatae sint ipsa aut architecto saepe dolor! Fuga ex, ea iusto asperiores culpa deserunt sunt exercitationem, quibusdam possimus odio delectus, odit minima qui? Maiores, earum sint nobis est repudiandae ullam impedit excepturi eaque provident enim iste assumenda reprehenderit dolore maxime dolores sapiente explicabo ea repellat omnis aperiam dolor minus! Cupiditate, quaerat nostrum.
+  Ab minima laboriosam ut quis error? Odit, perferendis?" />
+
+
+
+<car-divider></car-divider>
+<h3>Media card</h3>
+<div class="flex flex-wrap gap-4">
+<car-card [imgSrc]="chickurl" title="Chicken and Mushroom Fricassee"  class="block max-w-[220px]">
+</car-card>
+<car-card [imgSrc]="foodurl" title="a tasty meal avocado"  class="block max-w-[220px]">
+</car-card>
+</div>
+
+
+<car-divider></car-divider>
+<div class='flex gap-4 flex-wrap'>
+  <car-card [imgSrc]="imgSrc" title="5 things you need to know about your debit card" content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eligendi temporibus est debitis eveniet, quasi dolores aliquam earum, maxime asperiores beatae sint ipsa aut architecto saepe dolor! Fuga ex, ea iusto asperiores culpa deserunt sunt exercitationem, quibusdam possimus odio delectus, odit minima qui? Maiores, earum sint nobis est repudiandae ullam impedit excepturi eaque provident enim iste assumenda reprehenderit dolore maxime dolores sapiente explicabo ea repellat omnis aperiam dolor minus! Cupiditate, quaerat nostrum.
+      Ab minima laboriosam ut quis error? Odit, perferendis?" class="block max-w-[260px]">
+    <car-button color="primary" size="small">Order now</car-button>
+  </car-card>
+  <car-card [imgSrc]="imgSrc" title="5 things you need to know about your debit card" content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eligendi temporibus est debitis eveniet, quasi dolores aliquam earum, maxime asperiores beatae sint ipsa aut architecto saepe dolor! Fuga ex, ea iusto asperiores culpa deserunt sunt exercitationem, quibusdam possimus odio delectus, odit minima qui? Maiores, earum sint nobis est repudiandae ullam impedit excepturi eaque provident enim iste assumenda reprehenderit dolore maxime dolores sapiente explicabo ea repellat omnis aperiam dolor minus! Cupiditate, quaerat nostrum.
+      Ab minima laboriosam ut quis error? Odit, perferendis?" class="block max-w-[260px]">
+    <car-button color="primary" size="small">Order now</car-button>
+  </car-card>
+  <car-card [imgSrc]="imgSrc" title="5 things you need to know about your debit card" content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eligendi temporibus est debitis eveniet, quasi dolores aliquam earum, maxime asperiores beatae sint ipsa aut architecto saepe dolor! Fuga ex, ea iusto asperiores culpa deserunt sunt exercitationem, quibusdam possimus odio delectus, odit minima qui? Maiores, earum sint nobis est repudiandae ullam impedit excepturi eaque provident enim iste assumenda reprehenderit dolore maxime dolores sapiente explicabo ea repellat omnis aperiam dolor minus! Cupiditate, quaerat nostrum.
+      Ab minima laboriosam ut quis error? Odit, perferendis?" class="block max-w-[260px]">
+    <car-button color="primary" size="small">Order now</car-button>
+  </car-card>
+</div>
+
+
+
+<car-divider></car-divider>
+
+<car-card class="block max-w-[260px]">
+  <p class="text-sm text-car-neutral-700 dark:text-car-neutral-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repudiandae eligendi quo recusandae officiis, culpa minus nemo possimus aut vero numquam soluta? Reiciendis asperiores nostrum ipsum rerum nobis! Natus ut architecto sit modi aliquam, rem fugit dolor esse voluptates nihil nisi eum distinctio ab minima asperiores quidem delectus maxime tempore.</p>
+  <car-item title="John Doe" content="Toronto, Ontario">
+    <car-avatar car-item-avatar name="Johne" [imgUrl]="photoUrl"></car-avatar>
+  </car-item>
+</car-card>

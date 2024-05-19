@@ -1,0 +1,11 @@
+<div #carSlider>
+  <ng-container *ngIf="maxValue; else onlyOneValSlider">
+    <ngx-slider [(value)]="value" [(highValue)]="maxValue" [options]="sliderOptions"
+      (mouseup)="onSliderChange()"></ngx-slider>
+  </ng-container>
+  <ng-template #onlyOneValSlider>
+    <ngx-slider [(value)]="value" [options]="sliderOptions"
+      (mouseup)="onSliderChange()"></ngx-slider>
+  </ng-template>
+</div>
+

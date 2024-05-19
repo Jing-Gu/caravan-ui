@@ -1,0 +1,22 @@
+<ng-container *ngIf="title">
+  <button type="button" (click)="toggleDrawer()"
+    class="w-full p-4 border-b-car-neutral-500"
+    [ngClass]="{'bg-car-neutral-50 dark:bg-car-dark-100': isOpen,
+    'cursor-not-allowed opacity-30': isDisabled,
+    'hover:bg-car-neutral-50 dark:hover:bg-car-dark-100': !isDisabled}">
+    <dt class="flex justify-between text-car-neutral-900 dark:text-car-neutral-50">
+      <p class="text-left font-medium mr-4" [ngClass]="{'text-car-primary-500': isOpen}">
+        <span *ngIf="id" class="inline-block mr-4">{{id}}</span>
+        {{title}}
+      </p>
+      <i-feather [name]="isOpen ? closeIcon : openIcon" class="flex-none"
+        [ngClass]="{'text-car-primary-500': isOpen}" />
+    </dt>
+  </button>
+  <dd class="h-0 overflow-hidden p-4 transition-height duration-300 ease-in-out
+    text-car-neutral-900 text-sm dark:text-car-neutral-50"
+    [ngClass]="{'h-auto p-4 bg-car-neutral-50 dark:bg-car-dark-100': isOpen}">
+    <p *ngIf="content">{{content}}</p>
+    <ng-content></ng-content>
+  </dd>
+</ng-container>

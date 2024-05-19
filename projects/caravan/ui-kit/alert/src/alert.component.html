@@ -1,0 +1,10 @@
+<div class="rounded-sm flex gap-4 flex-wrap items-center p-4 border-l-4" #alert>
+  <ng-content select="i-feather"></ng-content>
+  <div>
+    <p *ngIf="title" class="mb-1 font-semibold text-base lg:text-lg">{{title}}</p>
+    <p *ngIf="content" class="text-sm lg:text-base">{{content}}</p>
+  </div>
+  <div class="flex flex-row gap-4 ml-auto">
+    <ng-content select="car-button"></ng-content>
+  </div>
+</div>

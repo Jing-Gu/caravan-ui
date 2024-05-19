@@ -1,0 +1,10 @@
+<div class='component-case'>
+  <car-rating color="primary" (ratingChange)="handleRatingChange($event)"></car-rating>
+  <car-rating color="secondary"></car-rating>
+  <p>Read-only rating</p>
+  <car-rating ratingIcon="heart" [rating]="3" color="error" [clickable]="false"></car-rating>
+  <car-rating [rating]="4" color="secondary" [clickable]="false"></car-rating>
+  <car-rating [rating]="4" color="secondary" size="large" [clickable]="false"></car-rating>
+  <car-rating [rating]="4" color="secondary" size="small" [clickable]="false"></car-rating>
+  <car-rating [stars]=[1,2,3,4,5,6,7,8,9,10] color="success" [rating]="8" [clickable]="false"></car-rating>
+</div>

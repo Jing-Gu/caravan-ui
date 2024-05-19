@@ -1,0 +1,54 @@
+<div class="inline-block">
+  <ng-container *ngIf="type === 'full'">
+    <svg [attr.width]="circleCx*2" [attr.height]="circleCy*2"
+      fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle [attr.cx]="circleCx" [attr.cy]="circleCy" [attr.r]="circleR"
+        [attr.stroke-width]="strokeWidth"
+        class="transform origin-center rotate-[-90deg] stroke-car-neutral-50 dark:stroke-car-dark-100" />
+      <circle [attr.cx]="circleCx" [attr.cy]="circleCy" [attr.r]="circleR"
+        [attr.stroke-width]="strokeWidth"
+        [attr.stroke-dasharray]="dashArray" [attr.stroke-dashoffset]="dashOffset"
+        class="transform origin-center rotate-[-90deg]"
+        [ngClass]="{'stroke-car-primary-500': color === 'primary',
+          'stroke-car-secondary-500': color === 'secondary',
+          'stroke-car-success-500': color === 'success',
+          'stroke-car-error-500': color === 'error'}"
+        [@gaugeAnimation]="{ value: 'animate', params: { dashOffset: dashOffset } }"/>
+      <text x="50%" y="48%" text-anchor="middle" alignment-baseline="central"
+        [attr.font-size]="mainTextSize"
+        class="font-medium fill-current text-car-neutral-900 dark:text-car-neutral-100">
+        {{ value }}
+      </text>
+      <text x="50%" y="64%" text-anchor="middle" alignment-baseline="central"
+        [attr.font-size]="labelSize"
+        class="fill-current text-car-neutral-300 dark:text-car-neutral-500">
+        {{ label }}
+      </text>
+    </svg>
+  </ng-container>
+  <ng-container *ngIf="type === 'semi'">
+    <svg [attr.width]="circleCx*2" [attr.height]="circleCy+strokeWidth"
+      fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path [attr.d]="pathD" [attr.stroke-width]="strokeWidth"
+        class="stroke-car-neutral-50 dark:stroke-car-dark-100"/>
+      <path [attr.d]="pathD" [attr.stroke-width]="strokeWidth"
+        [attr.stroke-dasharray]="dashArray" [attr.stroke-dashoffset]="dashOffset"
+        [ngClass]="{'stroke-car-primary-500': color === 'primary',
+          'stroke-car-secondary-500': color === 'secondary',
+          'stroke-car-success-500': color === 'success',
+          'stroke-car-error-500': color === 'error'}"
+        [@gaugeAnimation]="{ value: 'animate', params: { dashOffset: dashOffset } }"/>
+      <text x="50%" y="64%" text-anchor="middle" alignment-baseline="central"
+        [attr.font-size]="mainTextSize"
+        class="font-medium fill-current text-car-neutral-900 dark:text-car-neutral-100">
+        {{ value }}
+      </text>
+      <text x="50%" y="90%" text-anchor="middle" alignment-baseline="central"
+        [attr.font-size]="labelSize"
+        class="fill-current text-car-neutral-300 dark:text-car-neutral-500">
+        {{ label }}
+      </text>
+    </svg>
+  </ng-container>
+</div>
+

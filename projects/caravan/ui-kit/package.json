@@ -1,0 +1,38 @@
+{
+  "name": "@caravancoop/ui-kit",
+  "version": "2.0.3",
+  "description": "UI kit made for Angular developers",
+  "keywords": [
+    "angular",
+    "uikit",
+    "tailwind",
+    "components",
+    "angular-components",
+    "design-system"
+  ],
+  "homepage": "https://caravancoop.github.io/caravan-ui-docs/",
+  "author": "Jing Gu / Caravan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caravancoop/caravan-ui"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.0.2",
+    "@angular/core": "^17.0.2",
+    "@angular/animations": "^17.0.2",
+    "angular-feather": "^6.5.0",
+    "ngx-slider-v2": "^17.0.0",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "license": "MIT",
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json"
+  }
+}

@@ -1,0 +1,26 @@
+<div class="flex gap-3 items-center p-1">
+  <ng-content select="[car-item-avatar]"></ng-content>
+  <div class="flex flex-col gap-1">
+    <ng-container *ngIf="title">
+      <div class="flex justify-between items-center flex-wrap">
+        <p class="text-car-neutral-900 dark:text-car-neutral-100">
+          <span *ngIf="id">{{id}}. </span>
+          {{title}}
+        </p>
+        <ng-content select=[car-item-badge]></ng-content>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="content">
+      <p class="text-car-neutral-700 dark:text-car-neutral-300
+        text-xs line-clamp-2">{{content}}
+      </p>
+    </ng-container>
+    <ng-container *ngIf="date">
+      <p class="text-car-neutral-500 text-xs">
+        {{date | date: 'MM/dd/yyyy'}}
+      </p>
+    </ng-container>
+  </div>
+  <ng-content select="[car-item-icon]"></ng-content>
+</div>
+

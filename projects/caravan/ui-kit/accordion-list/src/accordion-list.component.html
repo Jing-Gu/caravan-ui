@@ -1,0 +1,15 @@
+<ul *ngIf="qaList">
+  <div class="flex justify-between items-center mb-4 p-4 border-b-2
+    border-car-neutral-100 dark:border-car-dark-100">
+    <h1 class="text-xl font-semibold text-car-neutral-700 dark:text-car-neutral-300">{{heading}}</h1>
+    <car-button size="small" color="primary" (click)="toggleAll()">
+      {{ openAll ? 'Collapse all' : 'Expand all'}}
+    </car-button>
+  </div>
+  <li *ngFor="let qa of qaList">
+    <car-accordion-item [id]="showId ? qa.id : null" [title]="qa.title"
+      [content]="qa.content" [isDisabled]="qa.isDisabled" [isOpen]="qa.isOpen"
+      [openIcon]="openIcon" [closeIcon]="closeIcon">
+    </car-accordion-item>
+  </li>
+</ul>

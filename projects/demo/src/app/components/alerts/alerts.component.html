@@ -1,0 +1,68 @@
+<app-header [title]="title" [subtitle]="subtitle"></app-header>
+
+<p>Banners serve as both a notification bar and a promotional tool for your website.
+  They come in four different status types: info, warning, success, and error, each denoted by a unique color.
+</p>
+
+<div class='component-case'>
+  <h4>Simple alerts</h4>
+  <car-alert status="info" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+  </car-alert>
+  <car-alert status="warning" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+  </car-alert>
+  <pre>
+    <code>&lt;car-alert status=&quot;info&quot; content=&quot;&quot;&gt;&lt;/car-alert&gt;</code>
+    <code>&lt;car-alert status=&quot;warning&quot; content=&quot;&quot;&gt;&lt;/car-alert&gt;</code>
+  </pre>
+</div>
+
+<div class='component-case'>
+  <h4>Alerts with icons</h4>
+  <p>Import the specific icons from angular-feather/icons to your FeatherIconsModule, add the icon inside the alert component.</p>
+  <pre>
+    <code>{{importIcons}}</code>
+  </pre>
+  <car-alert status="info" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+    <i-feather name="info"></i-feather>
+  </car-alert>
+  <car-alert status="warning" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+    <i-feather name="alert-triangle"></i-feather>
+  </car-alert>
+  <car-alert status="success" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+    <i-feather name="check-circle"></i-feather>
+  </car-alert>
+  <car-alert status="error" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+    <i-feather name="x-circle"></i-feather>
+  </car-alert>
+  <pre>
+    <code>&lt;car-alert status=&quot;info&quot; content=&quot;&quot;&gt;<br>
+      &nbsp;&nbsp;&lt;i-feather name=&quot;info&quot;&gt;&lt;/i-feather&gt;<br>
+      &lt;/car-alert&gt;
+    </code>
+  </pre>
+</div>
+
+<div class='component-case'>
+  <h4>Alerts with actions</h4>
+  <p>If certain action is suggested, simply add buttons.</p>
+  <p>Import the <b>ButtonComponent</b> from the Caravan UI kit, then insert <b>&lt;car-button&gt;</b> inside the alert component.</p>
+  <car-alert status="info" content="A new software update is available. See what's new in version 2.0">
+    <i-feather name="info"></i-feather>
+    <car-button appearance="solid" color="primary" size="small">View more</car-button>
+    <car-button appearance="text" color="primary" size="small">Dismiss</car-button>
+  </car-alert>
+
+  <car-alert status="success" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, repellendus.">
+    <i-feather name="check-circle"></i-feather>
+    <car-button appearance="text" color="success" size="small" id="btn-cta">View more</car-button>
+    <car-button appearance="text" color="success" size="small" id="btn-close">Dismiss</car-button>
+  </car-alert>
+
+  <p>It is also possible to add a title to the alert.</p>
+  <car-alert status="info" title="Pro user feature" content="This is a feature available to Pro users at an additional cost.
+Check out our pricing information to learn more and activate a free trial.">
+  <i-feather name="info"></i-feather>
+  <car-button appearance="solid" color="primary" size="small">View more</car-button>
+  <car-button appearance="text" color="primary" size="small">Dismiss</car-button>
+</car-alert>
+</div>

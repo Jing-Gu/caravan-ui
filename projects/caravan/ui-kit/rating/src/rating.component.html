@@ -1,0 +1,42 @@
+
+  <ng-container *ngIf="!clickable">
+    <label *ngFor="let star of stars; index as i" [for]="'star' + i + id"
+        class="inline-block text-car-neutral-100 dark:text-car-neutral-700"
+        [ngClass]="{'!text-car-primary-500': star && star <= rating && color === 'primary',
+          '!text-car-secondary-500': star && star <= rating && color === 'secondary',
+          '!text-car-success-500': star && star <= rating && color === 'success',
+          '!text-car-error-500': star && star <= rating && color === 'error'}">
+      <i-feather [name]="ratingIcon" class="!fill-current"
+        [ngClass]="{'!w-4 !h-4': size === 'small',
+        '!w-6 !h-6': size === 'medium',
+        '!w-12 !h-12': size === 'large'}"></i-feather>
+      <input type='radio' [name]="'star' + i + id" [value]="star" [id]="'star' + i + id"
+        class="hidden" [checked]="star === rating">
+    </label>
+  </ng-container>
+
+  <ng-container *ngIf="clickable">
+    <label *ngFor="let star of stars; index as i" [for]="'star' + i + id"
+      class="inline-block cursor-pointer text-car-neutral-100 dark:text-car-neutral-700"
+      [ngClass]="{'!text-car-primary-500': star && star <= rating && color === 'primary',
+        '!text-car-secondary-500': star && star <= rating && color === 'secondary',
+        '!text-car-success-500': star && star <= rating && color === 'success',
+        '!text-car-error-500': star && star <= rating && color === 'error'}">
+      <i-feather [name]="ratingIcon" class="!fill-current"
+        [ngClass]="{'!w-4 !h-4': size === 'small',
+        '!w-6 !h-6': size === 'medium',
+        '!w-12 !h-12': size === 'large',
+        'hover:text-car-primary-500': color === 'primary',
+        'hover:text-car-secondary-500': color === 'secondary',
+        'hover:text-car-success-500': color === 'success',
+        'hover:text-car-error-500': color === 'error'}">
+      </i-feather>
+      <input type='radio' [name]="'star' + i + id" [value]="star" [id]="'star' + i + id"
+      class="hidden" (change)="onRatingChange(star)" [checked]="star === rating">
+    </label>
+  </ng-container>
+
+
+
+
+

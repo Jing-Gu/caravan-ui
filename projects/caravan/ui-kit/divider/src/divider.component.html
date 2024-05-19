@@ -1,0 +1,10 @@
+<div class="border-solid border"
+  [ngClass]="{'my-4': spacing === 'small',
+    'my-6': spacing === 'medium',
+    'my-12': spacing ==='large',
+    'border-car-neutral-100 dark:border-car-neutral-900': color === 'neutral',
+    'border-car-primary-500': color === 'primary',
+    'border-car-secondary-500': color === 'secondary',
+    'border-car-success-500': color === 'success',
+    'border-car-error-500': color === 'error',
+    }"></div>

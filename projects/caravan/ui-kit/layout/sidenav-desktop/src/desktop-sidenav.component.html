@@ -1,0 +1,12 @@
+<div class="md:flex h-full">
+  <aside class="hidden md:min-w-max md:block md:max-h-screen
+    md:overflow-y-auto">
+    <ng-content select="[car-desktop-menu]"></ng-content>
+    <ng-content></ng-content>
+  </aside>
+
+  <main class="w-full h-full bg-car-light dark:bg-car-dark-300 md:max-h-screen
+    overflow-y-auto">
+    <ng-content select="[car-sidenav-content]"></ng-content>
+  </main>
+</div>

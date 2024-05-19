@@ -1,0 +1,115 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="flex-gap-8">
+  <car-form-field [required]=true appearance="fill" tooltip="a tip for the email field">
+    <label for='email'>Email</label>
+    <i-feather name="help-circle" car-tooltip="tip test right" car-tooltip-position="right"
+      class="text-car-neutral-700 inline-block !w-4 !h-4"></i-feather>
+    <input  [ngClass]="{'border-car-error-500': !email?.valid && (email?.dirty || email?.touched)}"
+      type='email' id="email" name="email" formControlName="email" placeholder="example@mail.com" required>
+    <span *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="text-car-error-500 text-xs">
+      Please provide a valid email
+    </span>
+  </car-form-field>
+
+  <car-form-field [required]=true appearance="outline">
+    <label for='username'>Username</label>
+    <input [ngClass]="{'border-car-error-500': !username?.valid && (username?.dirty || username?.touched)}"
+      type='text' id="username" name="username" formControlName="username" placeholder="John Doe" required>
+    <span *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="text-car-error-500 text-xs">
+      Please provide a valid username
+    </span>
+  </car-form-field>
+
+  <car-form-field [required]=true appearance="outline">
+    <label for='password'>Password</label>
+    <input [ngClass]="{'border-car-error-500': !password?.valid && (password?.dirty || password?.touched)}"
+      type='password' id="password" name="password" formControlName="password" placeholder="Passord must be..." required>
+    <span *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+      Password must be longer than 10
+    </span>
+  </car-form-field>
+
+  <car-form-field>
+    <label>Age</label>
+    <input type="number" min="1" id="age" name="age" formControlName="age">
+  </car-form-field>
+
+  <car-form-field>
+    <label for="birthday">Date of birth</label>
+    <input car-date-format type="text" id="birthday" name="birthday" formControlName="birthday" placeholder="MM/DD/YYYY">
+    <span *ngIf="birthday?.errors?.['required'] && (birthday?.dirty || birthday?.touched)">
+      Please provide a date of birth
+    </span>
+    <span *ngIf="birthday?.errors?.['pattern'] && (birthday?.dirty || birthday?.touched)">
+      Date format must be MM/DD/YYYY
+    </span>
+  </car-form-field>
+
+  <car-form-field>
+    <label for='telephone'>Telephone</label>
+    <input type='text' id="telephone" name="telephone" formControlName="telephone">
+  </car-form-field>
+
+  <car-form-field>
+    <label for='intro'>Text field</label>
+    <textarea id='intro' cols='30' rows='10' placeholder="Write something about yourself" name='intro' formControlName="intro"></textarea>
+  </car-form-field>
+
+  <car-select [required]=true label="Province" [options]="provinces"
+    placeholder="-- Veuillez choisir parmi --" formControlName="province">
+  </car-select>
+  <span class="text-car-error-500 text-xs"
+    *ngIf="province?.errors?.['required'] && (province?.dirty || province?.touched)">
+    Please make a choice
+  </span>
+
+  <div>
+    <span>Which kingdom are you coming from?</span>
+    <car-select [optionLabels]="kingdoms" placeholder="-- Veuillez choisir parmi --" formControlName="kingdoms">
+    </car-select>
+  </div>
+
+
+  <car-select label="Your favourite drinks" [options]="drinks" placeholder="-- Veuillez choisir parmi --"
+    formControlName="drinks" [isDisabled]="drinksSelect?.disabled">
+  </car-select>
+
+
+
+  <div>
+    <p>Where are you from?</p>
+    <div class="flex flex-col">
+      <car-radio carId="mars" name="planet" value="mars" label="mars" color="primary" formControlName="planet" />
+      <car-radio carId="jupiter" name="planet" value="jupiter" label="jupiter" color="secondary" formControlName="planet" />
+      <car-radio carId="pluto" name="planet" value="pluto" label="pluto" color="success" formControlName="planet" />
+      <car-radio carId="mercury" name="planet" value="mercury" label="mercury" color="error" formControlName="planet" />
+      <car-radio carId="peach" name="planet" value="peach" label="peach" [isDisabled]=true formControlName="planet" />
+    </div>
+  </div>
+
+  <car-slider [options]="sliderOptions" formControlName="scores" />
+
+  <car-slider [options]="rangeOptions" formControlName="range" />
+  <car-slider [options]="rangeOptions" formControlName="rangeWithInitalVal" />
+
+
+  <div formArrayName="selectedFruits">
+    <ng-container *ngFor="let fruit of fruits; let i = index">
+      <car-checkbox [carId]="'fruit' + i" [value]="fruit.checked" [name]="'fruit' + i" [label]="fruit.label"
+        [formControlName]="i"></car-checkbox>
+    </ng-container>
+
+  </div>
+
+  <car-checkbox carId="terms" [value]="true" name="terms" formControlName="terms">
+    I agree with <a href="#" class="text-car-primary-500">company terms</a>
+  </car-checkbox>
+
+  <div>
+    <car-button appearance="outline" color="neutral" (click)="reset()">Recommencer</car-button>
+    <car-button [buttonType]="'submit'" color="primary">Sign up</car-button>
+  </div>
+
+  <!-- <car-button car-solid-btn [buttonType]="'submit'" color="primary" [isDisabled]="!signupForm.valid">Sign up</car-button> -->
+</form>
+
+

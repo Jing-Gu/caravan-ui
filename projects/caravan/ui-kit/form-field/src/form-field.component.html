@@ -1,0 +1,19 @@
+<div #carFormField>
+  <ng-content select="label"></ng-content>
+  <span *ngIf="required" class="ml-1 text-car-error-500">*</span>
+  <!-- style 1 - tooltip beside the label -->
+  <ng-content select="i-feather"></ng-content>
+  <div class="relative">
+    <ng-content select="input"></ng-content>
+    <ng-content select="textarea"></ng-content>
+    <!-- style 2 - tooltip inside the form field -->
+    <ng-container *ngIf="tooltip">
+      <div class="absolute right-2 top-[15px]">
+        <i-feather name="help-circle" [car-tooltip]="tooltip" car-tooltip-position="left"
+          class="text-car-neutral-700 !w-4 !h-4">
+        </i-feather>
+      </div>
+    </ng-container>
+    <ng-content></ng-content>
+  </div>
+</div>

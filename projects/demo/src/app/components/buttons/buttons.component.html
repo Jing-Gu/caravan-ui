@@ -1,0 +1,146 @@
+<app-header [title]="title" [subtitle]="subtitle"></app-header>
+<h3 class="mb-8">Regular size</h3>
+<div class='component-case'>
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="solid" color="primary" size="large">Primary CTA</car-button>
+    <car-button appearance="solid" color='secondary' size="large">Primary CTA</car-button>
+    <car-button appearance="solid" color="success" size="large">Success</car-button>
+    <car-button appearance="solid" color="error" size="large">Warning</car-button>
+    <car-button appearance="solid" color="primary" size="large" [isDisabled]=true>Disabled primary</car-button>
+  </div>
+
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="solid" color="primary">Primary CTA</car-button>
+    <car-button appearance="solid" color='secondary'>Primary CTA</car-button>
+    <car-button appearance="solid" color="success">Success</car-button>
+    <car-button appearance="solid" color="error">Warning</car-button>
+    <car-button appearance="solid" color="primary" [isDisabled]=true>Disabled primary</car-button>
+  </div>
+
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="solid" color="primary" size="small">Primary CTA</car-button>
+    <car-button appearance="solid" color='secondary' size="small">Primary CTA</car-button>
+    <car-button appearance="solid" color="success" size="small">Success</car-button>
+    <car-button appearance="solid" color="error" size="small">Warning</car-button>
+    <car-button appearance="solid" color="primary" size="small" [isDisabled]=true>Disabled primary</car-button>
+  </div>
+</div>
+
+<div class='component-case'>
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="outline" color="primary" size="large">Secondary CTA</car-button>
+    <car-button appearance="outline" color='secondary' size="large">Secondary CTA</car-button>
+    <car-button appearance="outline" color="success" size="large">Success</car-button>
+    <car-button appearance="outline" color="error" size="large">Warning</car-button>
+    <car-button appearance="outline" color="primary" size="large" [isDisabled]=true>Disabled Secondary</car-button>
+  </div>
+
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="outline" color="primary">Secondary CTA</car-button>
+    <car-button appearance="outline" color='secondary'>Secondary CTA</car-button>
+    <car-button appearance="outline" color="success">Success</car-button>
+    <car-button appearance="outline" color="error">Warning</car-button>
+    <car-button appearance="outline" color="primary" [isDisabled]=true>Disabled Secondary</car-button>
+  </div>
+
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="outline" color="primary" size="small">Secondary CTA</car-button>
+    <car-button appearance="outline" color='secondary' size="small">Secondary CTA</car-button>
+    <car-button appearance="outline" color="success" size="small">Success</car-button>
+    <car-button appearance="outline" color="error" size="small">Warning</car-button>
+    <car-button appearance="outline" color="primary" size="small" [isDisabled]=true>Disabled Secondary</car-button>
+  </div>
+</div>
+
+<div class='component-case'>
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="text" color="primary" size="large">Tertiary CTA</car-button>
+    <car-button appearance="text" color='secondary' size="large">Tertiary CTA</car-button>
+    <car-button appearance="text" color="success" size="large">Success</car-button>
+    <car-button appearance="text" color="error" size="large">Warning</car-button>
+    <car-button appearance="text" color="primary" size="large" [isDisabled]=true>Disabled Tertiary</car-button>
+  </div>
+
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="text" color="primary">Tertiary CTA</car-button>
+    <car-button appearance="text" color='secondary'>Tertiary CTA</car-button>
+    <car-button appearance="text" color="success">Success</car-button>
+    <car-button appearance="text" color="error">Warning</car-button>
+    <car-button appearance="text" color="primary" [isDisabled]=true>Disabled Tertiary</car-button>
+  </div>
+
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="text" color="primary" size="small">Tertiary CTA</car-button>
+    <car-button appearance="text" color='secondary' size="small">Tertiary CTA</car-button>
+    <car-button appearance="text" color="success" size="small">Success</car-button>
+    <car-button appearance="text" color="error" size="small">Warning</car-button>
+    <car-button appearance="text" color="primary" size="small" [isDisabled]=true>Disabled Tertiary</car-button>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class='component-case'>
+  <h4>If you're into buttons with icons</h4>
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="withIcon" color="primary">
+      <i-feather name="heart"></i-feather>
+      <span>Like it</span>
+    </car-button>
+
+    <car-button appearance="withIcon" color="secondary">
+      <span>Add to bag</span>
+      <i-feather name="shopping-bag"></i-feather>
+    </car-button>
+
+    <car-button appearance="withIcon" color="success">
+      <span>Settings</span>
+      <i-feather name="settings"></i-feather>
+    </car-button>
+
+    <car-button appearance="withIcon" color="error">
+      <span>Delete</span>
+      <i-feather name="trash-2"></i-feather>
+    </car-button>
+  </div>
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="withIcon" color="primary" size="small">
+      <i-feather name="heart" class="!h-4 !w-4"></i-feather>
+      <span>Like it</span>
+    </car-button>
+  </div>
+  <div class="flex gap-4 mb-4">
+    <car-button appearance="withIcon" color="primary" size="large">
+      <span>Sign up today</span>
+      <i-feather name="arrow-right-circle"></i-feather>
+    </car-button>
+    <car-button appearance="withIcon" color="primary" size="large" [isDisabled]=true>
+      <span>Sign up today</span>
+      <i-feather name="arrow-right-circle"></i-feather>
+    </car-button>
+  </div>
+</div>
+
+<div class='component-case'>
+  <h4>If one icon is more than enough</h4>
+  <car-button appearance="fab" color="error">
+    <i-feather name="trash-2"></i-feather>
+  </car-button>
+
+  <car-button appearance="fab" color="primary">
+    <i-feather name="edit"></i-feather>
+  </car-button>
+  <car-button appearance="fab" color="success">
+    <i-feather name="settings"></i-feather>
+  </car-button>
+  <car-button appearance="fab" color="success" [isDisabled]=true>
+    <i-feather name="settings"></i-feather>
+  </car-button>
+  <car-button appearance="text" color="primary">
+        <i-feather name="menu"></i-feather>
+  </car-button>
+</div>

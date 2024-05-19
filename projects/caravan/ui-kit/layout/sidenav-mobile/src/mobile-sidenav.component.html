@@ -1,0 +1,13 @@
+<div class="fixed inset-0 bg-car-dark-300 opacity-0 invisible z-40
+  transition-opacity ease-in-out duration-300 md:hidden"
+  [ngClass]="{'opacity-50 !visible': menuIsOpen}">
+  <ng-content select="[car-menu-overlay]"></ng-content>
+</div>
+<aside class="fixed inset-y-0 left-0 w-4/5 overflow-y-auto z-50
+  shadow-lg transform -translate-x-full transition-transform ease-in-out duration-300
+  md:hidden" [ngClass]="{'translate-x-0': menuIsOpen}">
+  <ng-content select="[car-mobile-menu]"></ng-content>
+  <ng-content></ng-content>
+</aside>
+
+

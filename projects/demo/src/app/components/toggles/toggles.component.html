@@ -1,0 +1,32 @@
+<app-header [title]="title" [subtitle]="subtitle"></app-header>
+
+<p>As an alternative for the checkbox, the toggle provides an on or off choice to a user.
+  A toggle can be used to trigger an immediate action such as an activation/deactivation
+</p>
+<div class="component-case">
+  <h4>A default toggle</h4>
+  <car-toggle toggleId="1"></car-toggle>
+  <p>A toggle can have an optional label aside.</p>
+  <car-toggle label="Automatic" toggleId="2"></car-toggle>
+</div>
+<div class="component-case">
+  <h4>A checked toggle</h4>
+  <car-toggle [checked]="true" toggleId="3"></car-toggle>
+</div>
+<div class="component-case">
+  <h4>A toggle can vary in size and color</h4>
+  <p>If no size nor color is provided, the default is blue medium.</p>
+  <car-toggle size="small" label="Automatic" [checked]="true" toggleId="4"></car-toggle>
+  <car-toggle [checked]="true" toggleId="6"></car-toggle>
+  <car-toggle color="secondary" [checked]="true" toggleId="7"></car-toggle>
+  <car-toggle color="success" [checked]="true" toggleId="8"></car-toggle>
+  <car-toggle color="error" [checked]="true" toggleId="9"></car-toggle>
+  <car-toggle size="large" label="Automatic" [checked]="true" toggleId="5"></car-toggle>
+</div>
+<div class="component-case">
+  <h4>A toggle can be disabled</h4>
+  <car-toggle [isDisabled]="true" toggleId="10"></car-toggle>
+  <car-toggle [isDisabled]="true" [checked]="true" toggleId="11"></car-toggle>
+</div>
+
+

@@ -1,0 +1,18 @@
+<div class="flex-start flex w-full overflow-hidden rounded-full
+  bg-car-neutral-100 dark:bg-car-neutral-900"
+  [ngClass]="{'h-4': size === 'medium', 'h-5': size === 'large', 'h-2': size === 'small'}">
+  <div class="flex h-full rounded-full items-center justify-center overflow-hidden
+    break-all text-car-light"
+    [ngClass]="{'bg-car-primary-500': color === 'primary',
+      'bg-car-secondary-500': color === 'secondary',
+      'bg-car-success-500': color === 'success',
+      'bg-car-error-500': color === 'error'}"
+    [ngStyle]="{'width': valueInPercentage}"
+    [@progressAnimation]="{ value: true, params: { to: valueInPercentage, duration: animationDuration } }">
+    <span *ngIf="showPercentage" [ngClass]="{'text-[10px]': size === 'small',
+      'text-xs': size === 'medium',
+      'text-sm': size === 'large'}">
+        {{value | number:'1.0-0'}}%
+    </span>
+  </div>
+</div>

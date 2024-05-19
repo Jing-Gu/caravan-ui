@@ -1,0 +1,9 @@
+<div class='rounded-full border-b-transparent animate-spin'
+  [ngClass]="{'w-8 h-8 border-4': size === 'small',
+  'w-12 h-12 border-[5px]': size === 'medium',
+  'w-24 h-24 border-8': size === 'large',
+  'border-car-primary-500': color === 'primary',
+  'border-car-secondary-500': color === 'secondary',
+  'border-car-success-500': color === 'success',
+  'border-car-error-500': color === 'error' }">
+</div>

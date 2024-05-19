@@ -1,0 +1,29 @@
+<p class="inline-block text-sm mb-1 text-car-neutral-500">{{label}}</p>
+<span *ngIf="required" class="ml-2 text-car-error-500">*</span>
+<div class="relative w-full cursor-pointer" [ngClass]="{'!cursor-not-allowed opacity-50': isDisabled}"
+  #carSelectElement (document:click)="onClickOutside($event.target)">
+  <div class="flex justify-between items-center p-4 rounded-md bg-car-neutral-50
+    text-car-neutral-900 dark:bg-car-neutral-900" (click)="toggleOptionsList()">
+    <span class="text-car-neutral-900 text-sm dark:text-car-neutral-100">{{ selectedOption }}</span>
+    <i-feather class="text-car-neutral-500"
+      name="chevron-down"></i-feather>
+  </div>
+  <ul *ngIf="showOptionsList" class="absolute top-0 left-0 right-0 z-10 bg-car-light
+    dark:bg-car-neutral-900 rounded-md overflow-hidden shadow-xl max-h-60 overflow-y-auto">
+    <ng-container *ngIf="options">
+      <li *ngFor="let option of options" (click)="selectOption(option)"
+        class="p-4 text-car-neutral-900 cursor-pointer hover:bg-car-neutral-50
+        dark:text-car-neutral-100 dark:hover:bg-car-neutral-700">
+        {{ option }}
+      </li>
+    </ng-container>
+    <ng-container *ngIf="optionLabels">
+      <li *ngFor="let option of optionLabels" (click)="selectOption(option)"
+        class="p-4 text-car-neutral-900 cursor-pointer hover:bg-car-neutral-50
+        dark:text-car-neutral-100 dark:hover:bg-car-neutral-700">
+        {{ option.label }}
+      </li>
+    </ng-container>
+  </ul>
+</div>
+

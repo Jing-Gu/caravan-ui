@@ -1,0 +1,22 @@
+<div class='component-case'>
+  <h5>Default</h5>
+  <car-slider [options]="optionsOne" />
+</div>
+
+<div class='component-case'>
+  <form [formGroup]="rangeForm">
+    <h5>Range</h5>
+  <car-slider [options]="rangeOptions" formControlName="range" />
+    <h5>Slider ith a initial value</h5>
+    <car-slider [options]="optionsOne" formControlName="slider" />
+    <h5>Disabled slider</h5>
+    <car-slider [options]="optionsOne" formControlName="disSlider"
+      [isDisabled]="rangeForm.get('disSlider')?.disabled"></car-slider>
+    <h5>Disabled range</h5>
+    <car-slider [options]="rangeOptions" formControlName="disRange"
+      [isDisabled]="rangeForm.get('disRange')?.disabled"></car-slider>
+  </form>
+</div>
+
+
+

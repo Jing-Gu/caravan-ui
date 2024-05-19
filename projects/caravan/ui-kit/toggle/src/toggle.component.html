@@ -1,0 +1,36 @@
+<div class="inline-flex items-center" [ngClass]="{'opacity-30': isDisabled}">
+  <div class="relative inline-block rounded-full"
+    [ngClass]="{'h-9 w-16': size === 'large', 'h-7 w-14': size === 'medium', 'h-6 w-10': size === 'small'}">
+    <input [id]="toggleId" type="checkbox" (change)="onToggleChange($event)"
+      [disabled]="isDisabled" [checked]="checked" class="peer absolute cursor-pointer
+      appearance-none rounded-full bg-car-neutral-100 dark:bg-car-neutral-700 transition-colors duration-300"
+      [ngClass]="{'!cursor-not-allowed': isDisabled,
+      'h-8 w-16': size === 'large', 'h-6 w-12': size === 'medium', 'h-5 w-10': size === 'small',
+      'checked:bg-car-primary-500 dark:checked:bg-car-primary-500 peer-checked:border-car-primary-500 peer-checked:before:bg-car-primary-500': color === 'primary',
+      'checked:bg-car-secondary-500 dark:checked:bg-car-secondary-500 peer-checked:border-car-secondary-500 peer-checked:before:bg-car-secondary-500': color === 'secondary',
+      'checked:bg-car-success-500 dark:checked:bg-car-success-500 peer-checked:border-car-success-500 peer-checked:before:bg-car-success-500': color === 'success',
+      'checked:bg-car-error-500 dark:checked:bg-car-error-500 peer-checked:border-car-error-500 peer-checked:before:bg-car-error-500': color === 'error'}"/>
+    <label [for]="toggleId" class="before:content[''] absolute top-0 left-0
+      cursor-pointer rounded-full border-2 border-car-neutral-100 bg-car-light
+       transition-all duration-300 before:absolute before:top-1/2 before:left-1/2
+      before:block before:-translate-y-1/2 before:-translate-x-1/2
+      before:rounded-full before:bg-car-neutral-500 before:opacity-0 before:transition-opacity
+      hover:before:opacity-10 peer-checked:translate-x-full"
+      [ngClass]="{'!cursor-not-allowed': isDisabled,
+      'h-8 w-8 before:h-16 before:w-16': size === 'large',
+      'h-6 w-6 before:h-12 before:w-12': size === 'medium',
+      'h-5 w-5 before:h-10 before:w-10': size === 'small',
+      'peer-checked:border-car-primary-500 peer-checked:before:bg-car-primary-500': color === 'primary',
+      'peer-checked:border-car-secondary-500 peer-checked:before:bg-car-secondary-500': color === 'secondary',
+      'peer-checked:border-car-success-500 peer-checked:before:bg-car-success-500': color === 'success',
+      'peer-checked:border-car-error-500 peer-checked:before:bg-car-error-500': color === 'error'}">
+    </label>
+  </div>
+  <label *ngIf="label" [for]="toggleId" class="ml-2 cursor-pointer select-none text-car-neutral-700
+    dark:text-car-neutral-300" [ngClass]="{'!cursor-not-allowed': isDisabled,
+    'text-xs': size === 'small',
+    'text-sm': size === 'medium',
+    'text-base': size === 'large'}">
+    {{label}}
+  </label>
+</div>

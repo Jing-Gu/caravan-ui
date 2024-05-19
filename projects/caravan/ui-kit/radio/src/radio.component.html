@@ -1,0 +1,34 @@
+<div class="inline-flex items-center" [ngClass]="{'opacity-30': isDisabled}">
+  <label class="relative flex cursor-pointer items-center rounded-full p-3" [for]="carId">
+    <input type="radio" [id]="carId" [name]="name" [disabled]="isDisabled"
+      (change)="onRadioChange($event)" [value]="value" [checked]="value === inputValue"
+      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none
+      rounded-full border-2 transition-all
+      before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12
+      before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full
+      before:opacity-0 before:transition-opacity hover:before:opacity-10"
+      [ngClass]="{'!cursor-not-allowed': isDisabled,
+      'border-car-primary-500 before:bg-car-primary-500 checked:border-car-primary-500
+      checked:before:bg-car-primary-500': color === 'primary',
+      'border-car-secondary-500 before:bg-car-secondary-500 checked:border-car-secondary-500
+      checked:before:bg-car-secondary-500': color === 'secondary',
+      'border-car-success-500 before:bg-car-success-500 checked:border-car-success-500
+      checked:before:bg-car-success-500': color === 'success',
+      'border-car-error-500 before:bg-car-error-500 checked:border-car-error-500
+      checked:before:bg-car-error-500': color === 'error'}" />
+    <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4
+      opacity-0 transition-opacity peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current"
+        [ngClass]="{'text-car-primary-500': color === 'primary',
+        'text-car-secondary-500': color === 'secondary',
+        'text-car-success-500': color === 'success',
+        'text-car-error-500': color === 'error'}" viewBox="0 0 16 16">
+        <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+      </svg>
+    </div>
+  </label>
+  <label [for]="carId" class="mt-px text-car-neutral-700 cursor-pointer select-none"
+    [ngClass]="{'!cursor-not-allowed': isDisabled}">
+    {{label}}
+  </label>
+</div>
